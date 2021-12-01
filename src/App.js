@@ -26,21 +26,29 @@ function App() {
     
   }
   function removeFood(index){
-    foodList.splice(index, 1)
-    setFoodList([...foodList])
+    foodList.forEach((food)=>{
+      if(food.name === index){
+        setFilteredFood(filteredFood.filter(food=> food.name !== index))
+        setFoodList(foodList.filter(food=> food.name !== index))
 
+      }
+    })
+/*     foodList.splice(index, 1)
+    setFoodList([...foodList])
+ */
 }
   
   return (<div className="App">
     <AddFoodForm  parentCB={createFood}/>
     <Search filterFood={handleFilterFood}/>
-    
+    <div className="food-list">
     {filteredFood.map((food, index)=>(
       
-      <div>
-      <FoodBox food={food} index={index} removeFood={removeFood} />
-      </div>
+      
+      <FoodBox food={food} index={food.name} removeFood={removeFood} />
+      
     ))}
+    </div>
   </div>
   )
 }

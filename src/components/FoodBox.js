@@ -11,6 +11,7 @@ export default function FoodBox(props){
    }
    
     return(
+        <div>
     <Col>
     <Card
         title={food.name}
@@ -25,5 +26,6 @@ export default function FoodBox(props){
         <Button onClick={deleteFood} type="primary"> Delete </Button>
     </Card>
     </Col>
+    </div>
     )
 }
