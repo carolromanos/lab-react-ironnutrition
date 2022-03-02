@@ -1,5 +1,4 @@
-import { Card, Col, Divider, Button } from "antd";
-import { useState } from "react/cjs/react.development";
+import { Card, Col, Button } from "antd";
 
 export default function FoodBox(props){
     const {food, index} = props

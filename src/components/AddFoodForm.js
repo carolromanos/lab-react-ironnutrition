@@ -16,7 +16,7 @@ function AddFoodForm(props){
         setFormState(Object.assign({}, formState, {[name]: value}))
 
     }
-    
+            
     return(
         <div className="AddFood">
             <form onSubmit={handleSubmit}>
